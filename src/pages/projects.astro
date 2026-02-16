@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.sortOrder - b.data.sortOrder
+);
+---
+
+<BaseLayout
+  title="Projects — Tom Hwang"
+  description="A selection of software projects by Sung Woo Hwang."
+>
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <h1
+      class="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-100 tracking-tight"
+    >
+      Projects
+    </h1>
+    <p class="mt-4 text-surface-500 dark:text-surface-400 max-w-2xl">
+      A selection of things I've built. Each project represents a real problem I
+      wanted to solve.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

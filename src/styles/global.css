@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+
+  /* Warm neutral palette */
+  --color-surface-50: oklch(0.985 0.002 75);
+  --color-surface-100: oklch(0.97 0.003 75);
+  --color-surface-200: oklch(0.92 0.004 75);
+  --color-surface-300: oklch(0.87 0.006 75);
+  --color-surface-400: oklch(0.7 0.008 75);
+  --color-surface-500: oklch(0.55 0.01 75);
+  --color-surface-600: oklch(0.44 0.01 75);
+  --color-surface-700: oklch(0.37 0.01 75);
+  --color-surface-800: oklch(0.27 0.006 75);
+  --color-surface-900: oklch(0.2 0.004 75);
+  --color-surface-950: oklch(0.13 0.003 75);
+
+  /* Subtle blue accent */
+  --color-accent-400: oklch(0.68 0.15 250);
+  --color-accent-500: oklch(0.6 0.15 250);
+  --color-accent-600: oklch(0.52 0.15 250);
+  --color-accent-700: oklch(0.45 0.15 250);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-surface-800);
+  background-color: var(--color-surface-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  color: var(--color-surface-200);
+  background-color: var(--color-surface-950);
+}

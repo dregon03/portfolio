@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SkillBadge from "../components/SkillBadge.astro";
+import ContactLinks from "../components/ContactLinks.astro";
+
+const skills = {
+  Languages: ["TypeScript", "JavaScript", "Python", "Go"],
+  Frameworks: ["React", "Next.js", "Astro", "Node.js", "FastAPI"],
+  Tools: ["Docker", "PostgreSQL", "Git", "GitHub Actions", "Cloudflare"],
+};
+---
+
+<BaseLayout
+  title="About — Tom Hwang"
+  description="Learn more about Sung Woo Hwang — software developer, builder, and problem solver."
+>
+  <section class="max-w-3xl mx-auto px-6 py-16">
+    <h1
+      class="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-100 tracking-tight"
+    >
+      About Me
+    </h1>
+
+    <div class="mt-10 flex flex-col md:flex-row gap-10">
+      <!-- Photo -->
+      <div class="shrink-0">
+        <div
+          class="w-48 h-48 rounded-2xl bg-surface-200 dark:bg-surface-800 overflow-hidden"
+        >
+          <!-- Replace src with your headshot: /images/headshot.jpg -->
+          <div
+            class="w-full h-full flex items-center justify-center text-surface-400 dark:text-surface-600 text-sm"
+          >
+            Your photo
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="space-y-4 text-surface-600 dark:text-surface-400 leading-relaxed">
+        <p>
+          Hi, I'm <strong class="text-surface-900 dark:text-surface-100">Sung Woo Hwang</strong>,
+          but most people call me Tom. I'm a software developer who loves
+          building tools and applications that solve real problems.
+        </p>
+        <p>
+          I'm passionate about clean code, thoughtful design, and shipping
+          things that people actually use. Whether it's a full-stack web app, a
+          CLI tool, or a data visualization, I care about getting the details
+          right.
+        </p>
+        <p>
+          When I'm not coding, you can find me exploring new technologies,
+          reading, or thinking about what to build next.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="mt-16">
+      <h2
+        class="text-xl font-semibold text-surface-900 dark:text-surface-100 mb-6"
+      >
+        Technologies
+      </h2>
+      <div class="space-y-4">
+        {
+          Object.entries(skills).map(([category, items]) => (
+            <div>
+              <h3 class="text-sm font-medium text-surface-500 dark:text-surface-400 mb-2">
+                {category}
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {items.map((skill) => (
+                  <SkillBadge name={skill} />
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="mt-16">
+      <h2
+        class="text-xl font-semibold text-surface-900 dark:text-surface-100 mb-6"
+      >
+        Get in Touch
+      </h2>
+      <ContactLinks />
+    </div>
+  </section>
+</BaseLayout>
