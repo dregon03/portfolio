@@ -1,12 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import BlogPostCard from "../components/BlogPostCard.astro";
 import { getCollection } from "astro:content";
 
-const featuredProjects = (await getCollection("projects"))
-  .filter((p) => p.data.featured)
+const allProjects = (await getCollection("projects"))
   .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 
 const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
@@ -21,27 +19,38 @@ const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
 >
   <Hero />
 
-  <!-- Featured Projects -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
-    <div class="flex items-end justify-between mb-10">
-      <div>
-        <p class="text-xs font-medium uppercase tracking-widest text-surface-400 dark:text-surface-500 mb-2">Projects</p>
-        <h2
-          class="text-2xl font-bold text-surface-900 dark:text-surface-100 tracking-tight"
-        >
-          Things I've built
-        </h2>
-      </div>
-      <a
-        href="/projects"
-        class="text-sm font-medium text-surface-500 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
-      >
-        View all &rarr;
-      </a>
-    </div>
-    <div class="grid gap-6 md:grid-cols-2">
-      {featuredProjects.map((project) => <ProjectCard project={project} />)}
-    </div>
+  <!-- Things I've built -->
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <h2 class="text-xs font-medium uppercase tracking-widest text-surface-400 dark:text-surface-500 mb-8">Things I've built</h2>
+
+    <ul class="space-y-6">
+      {allProjects.map((project) => (
+        <li class="group">
+          <div class="flex items-baseline justify-between gap-4">
+            <div>
+              {project.data.liveUrl ? (
+                <a
+                  href={project.data.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-base font-semibold text-surface-900 dark:text-surface-100 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors"
+                >
+                  {project.data.title}
+                  <span class="inline-block ml-1 text-surface-400 dark:text-surface-500 group-hover:text-accent-600 dark:group-hover:text-accent-400">&nearr;</span>
+                </a>
+              ) : (
+                <span class="text-base font-semibold text-surface-900 dark:text-surface-100">
+                  {project.data.title}
+                </span>
+              )}
+              <p class="mt-1 text-sm text-surface-500 dark:text-surface-400 leading-relaxed">
+                {project.data.description}
+              </p>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
   </section>
 
   <!-- Recent Blog Posts -->
