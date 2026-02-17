@@ -1,27 +1,35 @@
 ---
 ---
 
-<section class="max-w-3xl mx-auto px-6 py-24 sm:py-32">
-  <p class="text-sm font-medium text-accent-600 dark:text-accent-400 mb-4">
-    Hi, I'm
-  </p>
+<section class="max-w-3xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-32">
+  <div class="animate-fade-up">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="inline-block w-2 h-2 rounded-full bg-green-500 pulse-dot"></span>
+      <span class="text-sm text-surface-500 dark:text-surface-400">Based in Ottawa, Canada</span>
+    </div>
+  </div>
+
   <h1
-    class="text-4xl sm:text-5xl lg:text-6xl font-bold text-surface-900 dark:text-surface-100 tracking-tight"
+    class="text-4xl sm:text-5xl lg:text-6xl font-bold text-surface-900 dark:text-surface-100 tracking-tight leading-[1.1] animate-fade-up animate-delay-1"
   >
-    Sung Woo Hwang
+    I'm Tom &mdash;<br />
+    <span class="gradient-text">economist</span> turned <span class="gradient-text">builder</span>.
   </h1>
+
   <p
-    class="mt-4 text-lg sm:text-xl text-surface-500 dark:text-surface-400 max-w-2xl leading-relaxed"
+    class="mt-6 text-lg sm:text-xl text-surface-600 dark:text-surface-400 max-w-2xl leading-relaxed animate-fade-up animate-delay-2"
   >
-    Economist by day, builder by night. I work with national-level data at
-    the Privy Council Office and build apps that I feel are missing from the world.
+    By day I crunch national-level data at the Privy Council Office.
+    By night I build the apps I wish existed. I believe the best way
+    to understand a problem is to build the solution.
   </p>
-  <div class="mt-8 flex flex-wrap gap-4">
+
+  <div class="mt-10 flex flex-wrap gap-4 animate-fade-up animate-delay-3">
     <a
       href="/projects"
-      class="inline-flex items-center px-6 py-3 rounded-lg bg-surface-900 dark:bg-surface-100 text-surface-50 dark:text-surface-900 text-sm font-medium hover:bg-surface-700 dark:hover:bg-surface-300 transition-colors"
+      class="inline-flex items-center px-6 py-3 rounded-lg bg-surface-900 dark:bg-surface-100 text-surface-50 dark:text-surface-900 text-sm font-medium hover:bg-surface-700 dark:hover:bg-surface-300 transition-all hover:scale-[1.02] active:scale-[0.98]"
     >
-      View My Work
+      See what I've built
       <svg
         class="ml-2 w-4 h-4"
         fill="none"
@@ -37,9 +45,28 @@
     </a>
     <a
       href="/blog"
-      class="inline-flex items-center px-6 py-3 rounded-lg border border-surface-300 dark:border-surface-700 text-surface-700 dark:text-surface-300 text-sm font-medium hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors"
+      class="inline-flex items-center px-6 py-3 rounded-lg border border-surface-300 dark:border-surface-700 text-surface-700 dark:text-surface-300 text-sm font-medium hover:bg-surface-100 dark:hover:bg-surface-800 transition-all hover:scale-[1.02] active:scale-[0.98]"
     >
-      Read the Blog
+      Read my writing
     </a>
+  </div>
+
+  <!-- Currently section -->
+  <div class="mt-16 pt-8 border-t border-surface-200 dark:border-surface-800 animate-fade-up animate-delay-4">
+    <p class="text-xs font-medium uppercase tracking-widest text-surface-400 dark:text-surface-500 mb-4">Currently</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+      <div>
+        <p class="text-surface-400 dark:text-surface-500">Working on</p>
+        <p class="text-surface-800 dark:text-surface-200 font-medium">HangulGogo</p>
+      </div>
+      <div>
+        <p class="text-surface-400 dark:text-surface-500">Day job</p>
+        <p class="text-surface-800 dark:text-surface-200 font-medium">Privy Council Office</p>
+      </div>
+      <div>
+        <p class="text-surface-400 dark:text-surface-500">Playing</p>
+        <p class="text-surface-800 dark:text-surface-200 font-medium">Badminton</p>
+      </div>
+    </div>
   </div>
 </section>
