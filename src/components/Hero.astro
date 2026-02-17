@@ -1,8 +1,9 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<!-- Centered hero — true visual center, accounting for sticky header (h-16 = 4rem) -->
-<section class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6">
+<!-- Centered hero — fills the full viewport -->
+<section class="min-h-screen flex items-center justify-center px-6">
   <div class="text-center">
     <p class="text-sm text-surface-500 dark:text-surface-400 animate-fade-up mb-3">Tom Hwang</p>
 
@@ -41,8 +42,8 @@
   </div>
 </section>
 
-<!-- Currently section — after scrolling down -->
-<section class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+<!-- Currently section -->
+<section class="max-w-3xl mx-auto px-6 pt-32 pb-16">
   <div class="border-t border-surface-200 dark:border-surface-800 pt-10">
     <p class="text-xs font-medium uppercase tracking-widest text-surface-400 dark:text-surface-500 mb-6">Currently</p>
 
@@ -68,3 +69,16 @@
     </div>
   </div>
 </section>
+
+<!-- Navigation — sits in the middle of the page -->
+<nav class="max-w-3xl mx-auto px-6 pb-24">
+  <div class="border-t border-surface-200 dark:border-surface-800 pt-8">
+    <div class="flex items-center justify-center gap-6 flex-wrap">
+      <a href="/" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Home</a>
+      <a href="/about" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">About</a>
+      <a href="/projects" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Projects</a>
+      <a href="/blog" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Blog</a>
+      <ThemeToggle />
+    </div>
+  </div>
+</nav>

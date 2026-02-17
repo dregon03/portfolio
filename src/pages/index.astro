@@ -17,6 +17,7 @@ const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
 <BaseLayout
   title="Tom Hwang — Data by Day, Builder by Night"
   description="By day I crunch national-level data. By night I build what's missing. The best way to understand a problem is to build the solution."
+  hideHeader
 >
   <Hero />
 

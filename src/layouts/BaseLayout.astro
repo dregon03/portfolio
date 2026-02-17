@@ -9,9 +9,10 @@ interface Props {
   description: string;
   image?: string;
   type?: "website" | "article";
+  hideHeader?: boolean;
 }
 
-const { title, description, image, type } = Astro.props;
+const { title, description, image, type, hideHeader = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -46,7 +47,7 @@ const { title, description, image, type } = Astro.props;
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
-    <Header />
+    {!hideHeader && <Header />}
     <main class="flex-1">
       <slot />
     </main>
