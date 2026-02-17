@@ -1,10 +1,22 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t border-surface-200 dark:border-surface-800 mt-20">
+  <div class="max-w-5xl mx-auto px-6 pt-10 pb-6">
+    <!-- Navigation links -->
+    <nav class="flex items-center justify-center gap-6 flex-wrap mb-8">
+      <a href="/" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Home</a>
+      <a href="/about" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">About</a>
+      <a href="/projects" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Projects</a>
+      <a href="/blog" class="text-sm font-medium text-surface-600 dark:text-surface-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Blog</a>
+      <ThemeToggle />
+    </nav>
+  </div>
+
   <div
-    class="max-w-5xl mx-auto px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-4"
+    class="max-w-5xl mx-auto px-6 pb-12 flex flex-col sm:flex-row items-center justify-between gap-4"
   >
     <p class="text-sm text-surface-500 dark:text-surface-400">
       &copy; {currentYear} Sung Woo Hwang. All rights reserved.
